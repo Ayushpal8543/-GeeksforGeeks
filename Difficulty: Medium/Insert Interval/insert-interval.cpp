@@ -3,9 +3,10 @@ class Solution {
     vector<vector<int>> insertInterval(vector<vector<int>> &intervals,
                                        vector<int> &newInterval) {
         // code here
-        vector<vector<int>> ans;
         int i=0;
         int n=intervals.size();
+        vector<vector<int>> ans;
+        
         //before
         while(i<n && intervals[i][1]<newInterval[0]){
             ans.push_back(intervals[i]);
@@ -17,9 +18,7 @@ class Solution {
             newInterval[1]=max(newInterval[1],intervals[i][1]);
             i++;
         }
-        //add merge
         ans.push_back(newInterval);
-        //remaining element
         while(i<n){
             ans.push_back(intervals[i]);
             i++;
