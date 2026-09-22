@@ -4,7 +4,7 @@ class Solution {
         // Code here
         sort(arr.begin(),arr.end());
         vector<vector<int>> res;
-        res.push_back(arr[0]);
+        res.push_back(arr[0]); 
         for(int i=1;i<arr.size();i++){
             vector<int>& last=res.back();
             vector<int>& curr=arr[i];
@@ -15,5 +15,7 @@ class Solution {
             }
         }
         return res;
+        
+        
     }
 };
