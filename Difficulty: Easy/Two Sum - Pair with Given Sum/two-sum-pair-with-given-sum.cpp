@@ -5,8 +5,8 @@ class Solution {
         int n=arr.size();
         unordered_map<int,int> mp;
         for(int i=0;i<n;i++){
-            int complement=target-arr[i];
-            if(mp.find(complement) != mp.end()) {
+            int com=target-arr[i];
+            if(mp.find(com)!=mp.end()){
                 return true;
             }
             mp[arr[i]]=i;
