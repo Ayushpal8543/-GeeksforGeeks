@@ -2,7 +2,8 @@ class Solution {
   public:
     vector<vector<string>> anagrams(vector<string>& arr) {
         // code here
-        unordered_map<string,vector<string>> mp;
+    
+        unordered_map<string, vector<string>> mp;
         for(auto s : arr){
             string key=s;
             sort(key.begin(),key.end());
