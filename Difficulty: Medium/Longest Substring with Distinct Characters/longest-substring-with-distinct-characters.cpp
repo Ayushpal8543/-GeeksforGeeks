@@ -3,9 +3,10 @@ class Solution {
     int longestUniqueSubstr(string &s) {
         // code here
         int n=s.size();
+        
+        unordered_map<char,int> mp;
+        int maxlen=INT_MIN;
         int low=0;
-        int maxLen=INT_MIN;
-        unordered_map<int,int> mp;
         for(int high=0;high<n;high++){
             mp[s[high]]++;
             while(mp[s[high]]>1){
@@ -13,9 +14,10 @@ class Solution {
                 low++;
             }
             int len=high-low+1;
-            maxLen=max(maxLen,len);
+            maxlen=max(maxlen,len);
+            
         }
-        return maxLen;
+        return (maxlen==INT_MIN)? 0:maxlen;
         
     }
 };
